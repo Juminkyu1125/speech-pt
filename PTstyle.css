@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #eeeeee;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* 전체 레이아웃 */
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+}
+
+/* 사이드바 */
+.sidebar {
+  background: #ffffff;
+  color: #000000;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-header-box {
+  padding: 16px;
+  border-bottom: 2px solid #e5e5e5;
+}
+.sidebar-header {
+  font-size: 24px;
+  font-weight: 700;
+}
+.sidebar-primary {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebar-section {
+  font-size: 12px;
+  opacity: 0.8;
+  padding: 0 8px;
+}
+
+.chat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.chat-item {
+  background: transparent;
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.chat-item.active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* 메인 영역 */
+.main {
+  padding: 18px;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* 채팅 컨테이너 */
+.chat-container {
+  height: calc(100vh - 36px);
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* 헤더 */
+.chat-header {
+  padding: 16px;
+  font-weight: bold;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+}
+
+/* 메시지 영역 */
+.chat-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+}
+
+/* 말풍선 */
+.message {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.4;
+
+  animation: msgIn 140ms ease-out;
+}
+@keyframes msgIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.message.ai {
+  background-color: #f1f1f1;
+  align-self: flex-start;
+}
+.message.user {
+  background-color: #007aff;
+  color: #ffffff;
+  align-self: flex-end;
+}
+
+/* 입력 영역 */
+.chat-input {
+  display: flex;
+  gap : 10px;
+  padding: 10px;
+  border-top: 1px solid #e5e5e5;
+  background: #ffffff;
+  position: sticky;
+  bottom: 0;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.chat-input button {
+  margin-left: 8px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007aff;
+  color: white;
+  cursor: pointer;
+}

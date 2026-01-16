@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko"> <!-- html 버전을 알아서 최신걸로 보게끔 Ko는 한글-->
+    <head>
+        <meta charset="UTF-8" /> <!-- 한글 안깨지게 하는 설정 UTF-8 최신 문자 인코딩-->
+        <title>SpeechPT</title> 
+        <link rel="stylesheet" href="PTstyle.css" /> <!-- css 파일 연결하는 것 -->
+
+    </head>
+    <body>
+        <div class="app"> <!--왼쪽 목록-->
+            <aside class="sidebar">
+                <div class="sidebar-header-box">
+                    <div class="sidebar-header">SpeechPT</div>
+                </div>
+                <button class="sidebar-primary">+ 새 채팅</button>
+                <div class="sidebar-section">대화 목록</div>
+                <div class="chat-list">
+                    <button class="chat-item active">발표 연습</button>
+                    <button class="chat-item">면접 대비</button>
+                    <button class="chat-item">자기소개 연습</button>
+                </div>
+
+                <div class="sidebar-section">기능</div>
+                <div class="sidebar-actions">
+                <button class="sidebar-action">분석 기록</button>
+            </div>
+        </aside>
+        <!--메인 채팅-->
+          <main class="main">
+        <div class="chat-container">
+          <div class="chat-header">Speech-PT</div>
+
+          <div class="chat-messages" id="chatMessages">
+            <div class="message ai">
+              안녕하세요. 음성 파일과 문서를 업로드해주세요.
+            </div>
+            </div>
+            <div class="chat-input">
+                <button id="sendVoice">🎙️ </button>
+                <input id="chatInput" type="text" placeholder="메시지를 입력하세요" />
+                <button id="sendBtn">⏎</button>
+            <script src="main.js"></script>
+          </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
